@@ -1,15 +1,45 @@
-<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Project Carve | Weight Loss Coaching Built Around Real Life</title><meta name="description" content="A 3-month, 1:1 weight-loss coaching system combining training, nutrition, sleep, stress and habit coaching in Colombo, Sri Lanka."/><link rel="shortcut icon" href="favicon.svg"/><link rel="icon" href="favicon.svg"/>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>1:1 Weight Loss Coach in Colombo | Project Carve</title>
+<meta name="description" content="A 3-month, 1:1 weight-loss coaching system in Colombo, Sri Lanka: training, nutrition, sleep, stress and habit coaching with Haritha, who lost 30kg with real food and no supplements.">
+<link rel="canonical" href="https://www.theprojectcarve.com/">
+<link rel="icon" href="favicon.svg">
+<meta name="theme-color" content="#17140f">
 
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Project Carve">
+<meta property="og:url" content="https://www.theprojectcarve.com/">
+<meta property="og:title" content="Lose the weight. Learn how to keep it off. | Project Carve">
+<meta property="og:description" content="3 months of 1:1 weight-loss coaching in Colombo, built around your real week. Take the 2-minute fit check.">
+<meta property="og:image" content="https://www.theprojectcarve.com/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Haritha's transformation from 95kg to 65kg. Project Carve, 1:1 weight-loss coaching in Colombo.">
+<meta name="twitter:card" content="summary_large_image">
 
-
-
-
-
-
-
-
-
-
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Project Carve",
+  "description": "3-month, 1:1 weight-loss coaching in Colombo, Sri Lanka: training, nutrition, sleep, stress and habit coaching.",
+  "url": "https://www.theprojectcarve.com/",
+  "image": "https://www.theprojectcarve.com/og-image.jpg",
+  "telephone": "+94 70 686 6700",
+  "address": { "@type": "PostalAddress", "addressLocality": "Colombo", "addressCountry": "LK" },
+  "areaServed": "Colombo",
+  "founder": { "@type": "Person", "name": "Haritha Jayathunga" },
+  "makesOffer": {
+    "@type": "Offer",
+    "price": "210000",
+    "priceCurrency": "LKR",
+    "itemOffered": { "@type": "Service", "name": "Project Carve: 3-month 1:1 weight-loss coaching" }
+  }
+}
+</script>
 
 <style>
 
@@ -32,7 +62,7 @@
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; scroll-padding-top: 90px; }
 body {
   margin: 0;
   background: var(--paper);
@@ -40,9 +70,11 @@ body {
   font-family: var(--sans);
   -webkit-font-smoothing: antialiased;
 }
+body:has(.fit-dialog[open]) { overflow: hidden; }
 a { color: inherit; text-decoration: none; }
 svg { display: block; }
 button, a { -webkit-tap-highlight-color: transparent; }
+:focus-visible { outline: 2px solid var(--ember-bright); outline-offset: 3px; }
 .shell { width: min(1180px, calc(100% - 48px)); margin: 0 auto; }
 
 .site-header {
@@ -54,14 +86,15 @@ button, a { -webkit-tap-highlight-color: transparent; }
   background: rgba(23, 20, 15, 0.96);
   color: var(--white);
   border-bottom: 1px solid var(--line-dark);
-  position: absolute;
+  position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
   z-index: 20;
 }
 .brand { display: inline-flex; align-items: center; gap: 11px; font: 650 12px/1 var(--sans); letter-spacing: .16em; width: max-content; }
 .brand-mark { width: 31px; height: 31px; border: 1px solid rgba(216, 118, 63, .55); color: var(--ember-bright); display: grid; place-items: center; font: 500 18px/1 var(--serif); }
-.site-header nav { display: flex; gap: 30px; font-size: 13px; color: rgba(255, 253, 249, .68); }
+.site-header nav { display: flex; gap: 30px; font-size: 13px; color: rgba(255, 253, 249, .72); }
 .site-header nav a { transition: color .2s ease; }
 .site-header nav a:hover { color: var(--white); }
 .header-cta { justify-self: end; display: inline-flex; align-items: center; gap: 9px; font-size: 13px; font-weight: 650; color: var(--ember-bright); }
@@ -74,11 +107,11 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .hero-orbit::before, .hero-orbit::after { content: ""; position: absolute; border: 1px solid rgba(216, 118, 63, .1); border-radius: 50%; inset: 70px; }
 .hero-orbit::after { inset: 150px; }
 .hero-grid { position: relative; z-index: 2; display: grid; grid-template-columns: .95fr 1.05fr; gap: clamp(52px, 7vw, 96px); align-items: center; }
-.eyebrow { margin: 0 0 24px; color: #9c5d38; font: 650 11px/1.4 var(--mono); letter-spacing: .18em; }
+.eyebrow { margin: 0 0 24px; color: #9c5d38; font: 650 12px/1.4 var(--mono); letter-spacing: .18em; }
 .eyebrow.light { color: var(--ember-bright); }
 .hero h1 { margin: 0; max-width: 670px; font: 400 clamp(54px, 6vw, 82px)/.95 var(--serif); letter-spacing: -.045em; }
 .hero h1 span { display: block; margin-top: 11px; color: var(--ember-bright); font-style: italic; }
-.hero-lead { max-width: 650px; margin: 30px 0 0; color: rgba(255, 253, 249, .72); font-size: 17px; line-height: 1.75; }
+.hero-lead { max-width: 650px; margin: 30px 0 0; color: rgba(255, 253, 249, .78); font-size: 17px; line-height: 1.75; }
 .hero-actions { margin-top: 34px; display: flex; gap: 12px; flex-wrap: wrap; }
 .button { min-height: 53px; padding: 0 23px; border: 1px solid transparent; display: inline-flex; justify-content: center; align-items: center; gap: 10px; font-size: 13px; font-weight: 700; letter-spacing: .02em; transition: transform .2s ease, background .2s ease, border-color .2s ease; }
 .button:hover { transform: translateY(-2px); }
@@ -87,25 +120,30 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .button-primary:hover { background: #f19a61; }
 .button-quiet { color: var(--white); border-color: rgba(255, 255, 255, .24); }
 .button-quiet:hover { border-color: rgba(255, 255, 255, .5); }
-.microcopy { color: rgba(255, 253, 249, .46); margin: 14px 0 0; font-size: 12px; line-height: 1.55; }
-.trust-row { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 11px 20px; color: rgba(255, 253, 249, .58); font-size: 11px; }
+.microcopy { color: rgba(255, 253, 249, .66); margin: 14px 0 0; font-size: 13px; line-height: 1.55; }
+.trust-row { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 11px 20px; color: rgba(255, 253, 249, .74); font-size: 13px; }
 .trust-row span { display: inline-flex; align-items: center; gap: 6px; }
 .trust-row svg, .track-card li svg, .price-includes li svg, .assurances svg { width: 15px; min-width: 15px; fill: none; stroke: var(--ember-bright); stroke-width: 2; }
+.hero-proof { display: none; margin: 26px 0 0; padding: 5px; border: 1px solid rgba(237, 138, 76, .32); background: rgba(255,255,255,.035); }
+.hero-proof img { width: 100%; height: auto; display: block; }
+.hero-proof figcaption { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding: 10px 5px 5px; }
+.hero-proof strong { color: var(--ember-bright); font: 500 22px var(--serif); white-space: nowrap; }
+.hero-proof span { color: rgba(255,253,249,.7); font-size: 12px; line-height: 1.45; text-align: right; }
 .proof-block { position: relative; }
-.proof-kicker { position: absolute; top: -33px; right: 0; color: rgba(255,253,249,.46); font: 500 10px var(--mono); letter-spacing: .14em; }
+.proof-kicker { position: absolute; top: -33px; right: 0; color: rgba(255,253,249,.62); font: 500 12px var(--mono); letter-spacing: .14em; }
 .video-shell { position: relative; padding: 8px; border: 1px solid rgba(237, 138, 76, .32); background: rgba(255,255,255,.035); box-shadow: 0 35px 95px rgba(0,0,0,.42); }
 .video-shell::before { content: ""; position: absolute; width: 56px; height: 56px; top: -1px; left: -1px; border-left: 2px solid var(--ember-bright); border-top: 2px solid var(--ember-bright); pointer-events: none; }
 .video-shell video { width: 100%; aspect-ratio: 16 / 9; display: block; object-fit: contain; background: #0c0b09; }
 .proof-caption { display: flex; justify-content: space-between; align-items: baseline; gap: 20px; padding-top: 17px; }
 .proof-caption strong { color: var(--ember-bright); font: 500 25px var(--serif); }
-.proof-caption span { color: rgba(255,253,249,.45); font: 500 10px var(--mono); letter-spacing: .08em; text-align: right; }
+.proof-caption span { color: rgba(255,253,249,.62); font: 500 12px var(--mono); letter-spacing: .08em; text-align: right; }
 
 .proof-strip { background: var(--night-2); color: var(--white); border-top: 1px solid var(--line-dark); }
 .proof-stats { min-height: 112px; display: grid; grid-template-columns: repeat(4, 1fr); }
 .proof-stats div { display: flex; flex-direction: column; justify-content: center; padding-left: 30px; border-left: 1px solid var(--line-dark); }
 .proof-stats div:last-child { border-right: 1px solid var(--line-dark); }
 .proof-stats strong { color: var(--ember-bright); font: 500 26px var(--serif); }
-.proof-stats span { margin-top: 6px; color: rgba(255,253,249,.48); font-size: 11px; letter-spacing: .04em; }
+.proof-stats span { margin-top: 6px; color: rgba(255,253,249,.68); font-size: 13px; letter-spacing: .04em; }
 
 .section { padding: clamp(88px, 9vw, 132px) 0; }
 .section-heading { margin-bottom: 54px; }
@@ -114,11 +152,22 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .section-heading h2, .process-intro h2, .coach-copy h2, .faq-intro h2 { margin: 0; font: 400 clamp(40px, 5vw, 64px)/1.02 var(--serif); letter-spacing: -.035em; }
 .section-heading > p:last-child, .process-intro > p, .coach-copy > p, .faq-intro > p { color: var(--ink-soft); font-size: 17px; line-height: 1.75; }
 .section-heading.narrow > p:last-child { max-width: 720px; }
+
+.fit-section { background: #fffaf2; }
+.fit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.fit-card { padding: clamp(30px, 4vw, 46px); background: var(--white); border: 1px solid var(--line); }
+.fit-card.not-for { background: var(--paper-2); }
+.fit-card h3 { margin: 0 0 24px; font: 500 clamp(26px, 2.8vw, 32px)/1.15 var(--serif); }
+.fit-card ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 16px; }
+.fit-card li { display: flex; align-items: flex-start; gap: 12px; color: var(--ink-soft); font-size: 15px; line-height: 1.55; }
+.fit-card li svg { width: 17px; min-width: 17px; margin-top: 2px; fill: none; stroke: var(--ember); stroke-width: 2; }
+.fit-card.not-for li svg { stroke: #8a7f72; }
+
 .intro-section { background: var(--paper); }
 .problem-grid { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .problem-card { min-height: 245px; padding: 29px 25px 25px; border-left: 1px solid var(--line); }
 .problem-card:last-child { border-right: 1px solid var(--line); }
-.problem-card > span, .pillar-number { color: #a16b49; font: 500 10px var(--mono); letter-spacing: .12em; }
+.problem-card > span, .pillar-number { color: #a16b49; font: 500 12px var(--mono); letter-spacing: .12em; }
 .problem-card h3 { margin: 46px 0 13px; font: 500 21px/1.2 var(--serif); }
 .problem-card p, .pillar p { margin: 0; color: var(--ink-soft); font-size: 14px; line-height: 1.65; }
 
@@ -139,21 +188,21 @@ button, a { -webkit-tap-highlight-color: transparent; }
 
 .philosophy-section { background: var(--night); color: var(--white); padding-top: 0; padding-bottom: 0; }
 .philosophy-grid { width: 100%; max-width: 1440px; display: grid; grid-template-columns: 1.08fr .92fr; align-items: stretch; }
-.philosophy-image { min-height: 610px; overflow: hidden; }
+.philosophy-image { min-height: 460px; overflow: hidden; }
 .philosophy-image img { width: 100%; height: 100%; display: block; object-fit: cover; object-position: 35% center; }
-.philosophy-copy { padding: clamp(62px, 8vw, 118px); display: flex; flex-direction: column; justify-content: center; }
-.philosophy-copy h2 { max-width: 550px; margin: 0; font: 400 clamp(42px, 5vw, 66px)/1.02 var(--serif); letter-spacing: -.04em; }
-.philosophy-copy > p:not(.eyebrow) { max-width: 570px; margin: 27px 0 0; color: rgba(255,253,249,.61); font-size: 16px; line-height: 1.75; }
-.philosophy-copy .philosophy-line { padding-top: 24px; border-top: 1px solid var(--line-dark); color: var(--ember-bright) !important; font: italic 500 21px/1.5 var(--serif) !important; }
+.philosophy-copy { padding: clamp(48px, 6vw, 92px); display: flex; flex-direction: column; justify-content: center; }
+.philosophy-copy h2 { max-width: 550px; margin: 0; font: 400 clamp(38px, 4.4vw, 58px)/1.02 var(--serif); letter-spacing: -.04em; }
+.philosophy-copy > p:not(.eyebrow) { max-width: 570px; margin: 24px 0 0; color: rgba(255,253,249,.74); font-size: 16px; line-height: 1.75; }
+.philosophy-copy .philosophy-line { padding-top: 22px; border-top: 1px solid var(--line-dark); color: var(--ember-bright) !important; font: italic 500 21px/1.5 var(--serif) !important; }
 
 .process-section { background: var(--paper-2); }
 .process-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: clamp(60px, 9vw, 120px); align-items: start; }
-.process-intro { position: sticky; top: 60px; }
+.process-intro { position: sticky; top: 110px; }
 .process-intro > p { margin: 24px 0; }
 .text-link { display: inline-flex; align-items: center; gap: 9px; color: #8f4c27; font-size: 13px; font-weight: 700; border-bottom: 1px solid rgba(143,76,39,.35); padding-bottom: 5px; }
 .steps-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
 .steps-list li { padding: 29px 0; display: grid; grid-template-columns: 62px 1fr; gap: 18px; border-bottom: 1px solid var(--line); }
-.steps-list > li > span { color: #9a6544; font: 500 11px var(--mono); padding-top: 4px; }
+.steps-list > li > span { color: #9a6544; font: 500 12px var(--mono); padding-top: 4px; }
 .steps-list h3 { margin: 0 0 8px; font: 500 23px var(--serif); }
 .steps-list p { margin: 0; color: var(--ink-soft); font-size: 14px; line-height: 1.65; }
 
@@ -164,11 +213,11 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .coach-photo img { width: 100%; height: 530px; display: block; object-fit: cover; object-position: center 24%; }
 .coach-photo figcaption { position: absolute; z-index: 2; left: 31px; right: 31px; bottom: 30px; padding: 18px 20px; background: rgba(23,20,15,.91); color: var(--white); backdrop-filter: blur(12px); display: flex; align-items: baseline; justify-content: space-between; gap: 15px; }
 .coach-photo figcaption strong { color: var(--ember-bright); font: 500 26px var(--serif); }
-.coach-photo figcaption span { color: rgba(255,253,249,.55); font: 500 9px var(--mono); letter-spacing: .1em; text-transform: uppercase; }
+.coach-photo figcaption span { color: rgba(255,253,249,.72); font: 500 12px var(--mono); letter-spacing: .1em; text-transform: uppercase; }
 .coach-copy > p { margin: 22px 0; font-size: 16px; }
 .coach-copy blockquote { margin: 31px 0 0; padding: 24px 0 0 27px; border-left: 2px solid var(--ember); border-top: 1px solid var(--line); color: #584536; font: italic 500 21px/1.5 var(--serif); }
 .coach-credentials { margin-top: 27px; display: flex; flex-wrap: wrap; gap: 8px; }
-.coach-credentials span { padding: 8px 11px; border: 1px solid var(--line); color: var(--ink-soft); font-size: 10px; letter-spacing: .03em; }
+.coach-credentials span { padding: 8px 11px; border: 1px solid var(--line); color: var(--ink-soft); font-size: 12px; letter-spacing: .03em; }
 
 .tracks-section { background: var(--paper); }
 .tracks-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
@@ -176,38 +225,31 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .track-card.featured { background: var(--night); color: var(--white); border-color: var(--night); box-shadow: var(--shadow); }
 .track-top { display: flex; justify-content: space-between; align-items: center; gap: 15px; padding-bottom: 19px; border-bottom: 1px solid var(--line); }
 .featured .track-top { border-color: var(--line-dark); }
-.track-top span { font: 650 11px var(--mono); letter-spacing: .14em; color: #9c5d38; }
+.track-top span { font: 650 12px var(--mono); letter-spacing: .14em; color: #9c5d38; }
 .featured .track-top span { color: var(--ember-bright); }
 .track-top em { font: italic 500 17px var(--serif); color: var(--ink-soft); }
-.featured .track-top em { color: rgba(255,253,249,.55); }
+.featured .track-top em { color: rgba(255,253,249,.7); }
 .track-card h3 { margin: 31px 0 12px; font: 500 clamp(27px, 3vw, 36px)/1.1 var(--serif); }
 .track-card > p { min-height: 54px; color: var(--ink-soft); line-height: 1.65; font-size: 14px; }
-.featured > p { color: rgba(255,253,249,.58); }
+.featured > p { color: rgba(255,253,249,.72); }
 .track-card ul { list-style: none; margin: 29px 0 0; padding: 23px 0 0; border-top: 1px solid var(--line); display: grid; gap: 15px; }
 .featured ul { border-color: var(--line-dark); }
 .track-card li { display: flex; align-items: flex-start; gap: 10px; font-size: 13px; line-height: 1.45; }
 .tracks-note { margin: 27px 0 0; text-align: center; color: var(--ink-soft); font-size: 13px; }
 
-.mindbody-section { padding: clamp(70px, 8vw, 110px) 0; background: #fffaf2; }
-.mindbody-frame { position: relative; min-height: 590px; overflow: hidden; background: var(--paper-2); box-shadow: var(--shadow); }
-.mindbody-frame > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
-.mindbody-frame::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, transparent 35%, rgba(255,250,242,.17) 50%, rgba(255,250,242,.96) 70%, #fffaf2 100%); }
-.mindbody-copy { position: relative; z-index: 2; width: 46%; margin-left: auto; min-height: 590px; padding: clamp(50px, 6vw, 86px); display: flex; flex-direction: column; justify-content: center; }
-.mindbody-copy h2 { margin: 0; font: 400 clamp(41px, 4.5vw, 61px)/1.02 var(--serif); letter-spacing: -.04em; }
-.mindbody-copy > p:last-child { margin: 25px 0 0; color: var(--ink-soft); font-size: 15px; line-height: 1.75; }
-
 .investment-section { background: var(--night); position: relative; overflow: hidden; }
 .investment-section::before { content: ""; width: 700px; height: 700px; position: absolute; left: 50%; top: -410px; transform: translateX(-50%); border: 1px solid rgba(237,138,76,.13); border-radius: 50%; }
 .light-heading { position: relative; }
-.light-heading p:last-child { color: rgba(255,253,249,.55); }
+.light-heading p:last-child { color: rgba(255,253,249,.72); }
 .price-card { position: relative; z-index: 2; max-width: 940px; margin: 0 auto; background: #fffaf2; color: var(--ink); display: grid; grid-template-columns: .85fr 1.15fr; box-shadow: 0 40px 100px rgba(0,0,0,.42); }
 .price-summary { padding: 49px 45px; background: var(--paper-2); border-right: 1px solid var(--line); }
-.price-label { color: #9a5d38; font: 650 10px var(--mono); letter-spacing: .14em; }
+.price-label { color: #9a5d38; font: 650 12px var(--mono); letter-spacing: .14em; }
 .price { margin: 22px 0 5px; font: 500 clamp(40px, 5vw, 57px)/1 var(--serif); letter-spacing: -.035em; }
-.price-summary > p { color: var(--ink-soft); font-size: 13px; }
+.price-summary > p { color: var(--ink-soft); font-size: 13px; line-height: 1.55; }
 .payment-plan { margin-top: 31px; display: grid; gap: 0; border-top: 1px solid var(--line); }
-.payment-plan span { padding: 14px 0; display: flex; justify-content: space-between; font-size: 13px; border-bottom: 1px solid var(--line); }
-.payment-plan small { color: var(--ink-soft); font: 500 9px var(--mono); letter-spacing: .12em; }
+.payment-plan span { padding: 14px 0; display: flex; justify-content: space-between; align-items: baseline; gap: 12px; font-size: 13px; border-bottom: 1px solid var(--line); }
+.payment-plan span strong { white-space: nowrap; }
+.payment-plan small { color: var(--ink-soft); font: 500 11px var(--mono); letter-spacing: .1em; }
 .price-anchor { margin-top: 22px; }
 .price-includes { padding: 49px 45px; }
 .price-includes h3 { margin: 0 0 24px; font: 500 28px var(--serif); }
@@ -215,14 +257,14 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .price-includes li { display: flex; align-items: flex-start; gap: 12px; color: var(--ink-soft); font-size: 13px; line-height: 1.52; }
 .price-includes li strong { color: var(--ink); }
 .button-wide { width: 100%; margin-top: 29px; }
-.assurances { margin-top: 17px; display: flex; justify-content: center; flex-wrap: wrap; gap: 8px 16px; color: var(--ink-soft); font-size: 10px; }
+.assurances { margin-top: 17px; display: flex; justify-content: center; flex-wrap: wrap; gap: 8px 16px; color: var(--ink-soft); font-size: 12px; }
 .assurances span { display: flex; gap: 5px; align-items: center; }
-.assurances svg { width: 12px; min-width: 12px; }
-.venue-note { color: rgba(255,253,249,.42); text-align: center; font-size: 11px; margin: 23px 0 0; }
+.assurances svg { width: 13px; min-width: 13px; }
+.venue-note { color: rgba(255,253,249,.62); text-align: center; font-size: 13px; margin: 23px 0 0; }
 
 .faq-section { background: #fffaf2; }
 .faq-grid { display: grid; grid-template-columns: .65fr 1.35fr; gap: clamp(60px, 10vw, 130px); align-items: start; }
-.faq-intro { position: sticky; top: 50px; }
+.faq-intro { position: sticky; top: 110px; }
 .faq-intro > p { margin: 22px 0 8px; font-size: 14px; }
 .faq-list { border-top: 1px solid var(--line); }
 .faq-list details { border-bottom: 1px solid var(--line); }
@@ -235,13 +277,35 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .final-cta { background: var(--night-2); padding: clamp(90px, 10vw, 140px) 0; text-align: center; }
 .final-cta-inner { max-width: 850px; }
 .final-cta h2 { margin: 0; font: 400 clamp(48px, 7vw, 76px)/.98 var(--serif); letter-spacing: -.045em; }
-.final-cta > .shell > p:not(.eyebrow) { max-width: 650px; margin: 27px auto 31px; color: rgba(255,253,249,.62); line-height: 1.7; }
-.final-note { display: block; margin-top: 17px; color: rgba(255,253,249,.36); font: 500 10px var(--mono); letter-spacing: .1em; }
-footer { background: var(--night); color: rgba(255,253,249,.45); border-top: 1px solid var(--line-dark); }
-.footer-inner { min-height: 115px; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; font-size: 11px; }
+.final-cta > .shell > p:not(.eyebrow) { max-width: 650px; margin: 27px auto 31px; color: rgba(255,253,249,.74); line-height: 1.7; }
+.final-note { display: block; margin-top: 17px; color: rgba(255,253,249,.58); font: 500 12px var(--mono); letter-spacing: .1em; }
+footer { background: var(--night); color: rgba(255,253,249,.62); border-top: 1px solid var(--line-dark); }
+.footer-inner { min-height: 115px; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; font-size: 13px; }
 .footer-brand { color: var(--white); }
 .footer-inner > span { justify-self: end; }
 .mobile-bar { display: none; }
+
+.fit-dialog { width: min(560px, calc(100% - 24px)); max-width: none; max-height: calc(100% - 24px); margin: auto; padding: 0; overflow: auto; border: 1px solid rgba(237,138,76,.35); background: var(--night); color: var(--white); box-shadow: 0 40px 100px rgba(0,0,0,.5); }
+.fit-dialog::backdrop { background: rgba(12, 10, 8, .74); }
+.fit-inner { padding: 24px 28px 26px; }
+.fit-top { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+.fit-top .eyebrow { margin: 0; }
+.fit-close { width: 40px; height: 40px; border: 1px solid var(--line-dark); background: transparent; color: var(--white); font: 400 24px/1 var(--sans); cursor: pointer; }
+.fit-progress { height: 3px; margin: 20px 0 28px; background: rgba(255,253,249,.12); }
+.fit-progress span { display: block; width: 0; height: 100%; background: var(--ember-bright); transition: width .25s ease; }
+.fit-count { margin: 0 0 10px; color: rgba(255,253,249,.62); font: 500 12px var(--mono); letter-spacing: .12em; }
+.fit-step h3 { margin: 0; font: 400 clamp(26px, 6vw, 32px)/1.15 var(--serif); letter-spacing: -.02em; }
+.fit-step h3:focus { outline: none; }
+.fit-options { display: grid; gap: 10px; margin-top: 24px; }
+.fit-option { min-height: 54px; padding: 12px 18px; border: 1px solid rgba(255,253,249,.22); background: rgba(255,253,249,.04); color: var(--white); font: 650 15px/1.3 var(--sans); text-align: left; cursor: pointer; transition: border-color .2s ease, background .2s ease; }
+.fit-option:hover, .fit-option.is-chosen { border-color: var(--ember-bright); background: rgba(237,138,76,.12); }
+.fit-note { margin: 14px 0 0; color: rgba(255,253,249,.72); font-size: 14px; line-height: 1.6; }
+.fit-summary { margin: 18px 0 0; padding: 15px 18px; border-left: 2px solid var(--ember-bright); background: rgba(255,253,249,.05); color: rgba(255,253,249,.86); font-size: 14px; line-height: 1.65; white-space: pre-line; }
+.fit-dialog .button-wide { margin-top: 20px; }
+.fit-foot { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-top: 24px; font-size: 13px; }
+.fit-back { padding: 8px 0; border: 0; background: none; color: rgba(255,253,249,.72); font: 650 13px var(--sans); cursor: pointer; }
+.fit-skip { color: rgba(255,253,249,.72); border-bottom: 1px solid rgba(255,253,249,.3); padding-bottom: 2px; text-align: right; }
+.nowrap { white-space: nowrap; }
 
 @media (max-width: 980px) {
   .site-header { grid-template-columns: 1fr auto; }
@@ -249,6 +313,7 @@ footer { background: var(--night); color: rgba(255,253,249,.45); border-top: 1px
   .hero { min-height: 0; padding-top: 135px; }
   .hero-grid { grid-template-columns: 1fr; gap: 72px; }
   .hero-copy { max-width: 760px; }
+  .hero-proof { display: block; max-width: 560px; }
   .proof-block { max-width: 760px; }
   .problem-grid { grid-template-columns: 1fr 1fr; }
   .problem-card:nth-child(3) { border-left: 1px solid var(--line); }
@@ -257,31 +322,33 @@ footer { background: var(--night); color: rgba(255,253,249,.45); border-top: 1px
   .pillar:nth-child(4), .pillar:nth-child(5) { border-top: 1px solid var(--line); }
   .pillar:nth-child(4) { border-left: 1px solid var(--line); }
   .philosophy-grid { grid-template-columns: 1fr; }
-  .philosophy-image { min-height: 520px; }
-  .philosophy-copy { padding: 78px max(32px, calc((100vw - 760px) / 2)); }
+  .philosophy-image { min-height: 380px; }
+  .philosophy-copy { padding: 64px max(32px, calc((100vw - 760px) / 2)); }
   .coach-grid { grid-template-columns: 1fr; }
   .coach-photo { max-width: 610px; }
-  .mindbody-frame { min-height: 0; }
-  .mindbody-frame > img { position: relative; height: auto; aspect-ratio: 16 / 9; object-fit: cover; }
-  .mindbody-frame::after { display: none; }
-  .mindbody-copy { width: 100%; min-height: 0; padding: 50px; }
   .faq-grid { grid-template-columns: 1fr; gap: 50px; }
   .faq-intro, .process-intro { position: static; }
 }
 
 @media (max-width: 720px) {
+  html { scroll-padding-top: 0; }
   body { padding-bottom: 72px; }
   .shell { width: min(100% - 32px, 580px); }
-  .site-header { height: 66px; padding: 0 16px; }
-  .site-header .brand { font-size: 10px; }
+  .site-header { position: absolute; height: 66px; padding: 0 16px; }
+  .site-header .brand { font-size: 11px; }
   .site-header .brand-mark { width: 28px; height: 28px; }
-  .header-cta { font-size: 11px; }
+  .header-cta { font-size: 13px; }
   .header-cta svg { display: none; }
   .hero { padding: 113px 0 58px; }
   .hero::before { display: none; }
   .hero h1 { font-size: clamp(45px, 13vw, 61px); }
   .hero-lead { margin-top: 25px; font-size: 15px; line-height: 1.65; }
-  .hero-actions { display: grid; }
+  .lead-extra { display: none; }
+  .hero-proof { margin-top: 22px; }
+  .hero-proof figcaption { display: grid; gap: 3px; }
+  .hero-proof strong { font-size: 21px; }
+  .hero-proof span { text-align: left; }
+  .hero-actions { display: grid; margin-top: 24px; }
   .button { width: 100%; }
   .trust-row { display: grid; }
   .proof-kicker { left: 0; right: auto; }
@@ -294,26 +361,29 @@ footer { background: var(--night); color: rgba(255,253,249,.45); border-top: 1px
   .proof-stats div:nth-child(3) { border-top: 1px solid var(--line-dark); }
   .proof-stats div:nth-child(4) { border-top: 1px solid var(--line-dark); }
   .proof-stats strong { font-size: 22px; }
-  .proof-stats span { font-size: 9px; }
+  .proof-stats span { font-size: 12px; }
   .section { padding: 78px 0; }
   .section-heading { margin-bottom: 38px; }
   .section-heading h2, .process-intro h2, .coach-copy h2, .faq-intro h2 { font-size: clamp(38px, 11vw, 49px); }
   .section-heading > p:last-child, .process-intro > p, .coach-copy > p { font-size: 15px; line-height: 1.68; }
   .eyebrow { margin-bottom: 17px; }
+  .fit-grid { grid-template-columns: 1fr; gap: 14px; }
+  .fit-card { padding: 28px 24px; }
+  .fit-card h3 { margin-bottom: 20px; }
   .problem-grid { grid-template-columns: 1fr; }
   .problem-card { min-height: 0; padding: 24px 22px 28px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
   .problem-card:nth-child(n) { border-top: 0; }
   .problem-card h3 { margin-top: 30px; font-size: 22px; }
   .split-heading { grid-template-columns: 1fr; gap: 18px; }
   .pillar-list { grid-template-columns: 1fr; }
-  .pillar:nth-child(n) { min-height: 0; padding: 22px 24px 27px; border: 0; border-left: 1px solid var(--line); border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-  .pillar h3 { margin: 28px 0 9px; font-size: 25px; }
+  .pillar:nth-child(n) { min-height: 0; padding: 18px 22px 22px; border: 0; border-left: 1px solid var(--line); border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .pillar h3 { margin: 10px 0 6px; font-size: 22px; }
   .ownership-callout { padding: 31px 25px; grid-template-columns: 1fr; gap: 23px; }
   .callout-mark { width: 47px; height: 47px; }
   .ownership-callout h3 { font-size: 28px; }
-  .philosophy-image { min-height: 380px; }
-  .philosophy-copy { padding: 66px 25px; }
-  .philosophy-copy h2 { font-size: 43px; }
+  .philosophy-image { min-height: 260px; }
+  .philosophy-copy { padding: 52px 25px; }
+  .philosophy-copy h2 { font-size: 38px; }
   .process-grid { grid-template-columns: 1fr; gap: 38px; }
   .steps-list li { grid-template-columns: 43px 1fr; }
   .coach-photo { min-height: 455px; }
@@ -325,11 +395,6 @@ footer { background: var(--night); color: rgba(255,253,249,.45); border-top: 1px
   .track-card > p { min-height: 0; }
   .track-top { align-items: flex-start; }
   .track-top em { text-align: right; }
-  .mindbody-section { padding: 58px 0; }
-  .mindbody-frame { width: min(100% - 32px, 580px); }
-  .mindbody-frame > img { aspect-ratio: 1.3 / 1; object-position: 37% center; }
-  .mindbody-copy { padding: 39px 25px 45px; }
-  .mindbody-copy h2 { font-size: 42px; }
   .price-card { grid-template-columns: 1fr; }
   .price-summary, .price-includes { padding: 37px 25px; }
   .price-summary { border-right: 0; border-bottom: 1px solid var(--line); }
@@ -344,10 +409,13 @@ footer { background: var(--night); color: rgba(255,253,249,.45); border-top: 1px
   .footer-inner > span { align-self: center; }
   .mobile-bar { position: fixed; z-index: 50; left: 0; right: 0; bottom: 0; height: calc(72px + env(safe-area-inset-bottom)); padding: 10px 13px env(safe-area-inset-bottom); background: rgba(23,20,15,.97); border-top: 1px solid rgba(237,138,76,.28); display: flex; align-items: center; justify-content: space-between; gap: 12px; color: var(--white); box-shadow: 0 -15px 35px rgba(0,0,0,.24); }
   .mobile-bar div { display: grid; gap: 3px; }
-  .mobile-bar small { color: rgba(255,253,249,.43); font: 500 8px var(--mono); letter-spacing: .08em; }
-  .mobile-bar strong { font-size: 11px; }
-  .mobile-bar > a { height: 43px; padding: 0 17px; display: flex; align-items: center; gap: 8px; background: var(--ember-bright); color: var(--night); font-size: 12px; font-weight: 750; }
+  .mobile-bar small { color: rgba(255,253,249,.62); font: 500 11px var(--mono); letter-spacing: .06em; }
+  .mobile-bar strong { font-size: 13px; }
+  .mobile-bar > a { height: 46px; padding: 0 18px; display: flex; align-items: center; gap: 8px; background: var(--ember-bright); color: var(--night); font-size: 14px; font-weight: 750; }
   .mobile-bar svg { width: 15px; fill: none; stroke: currentColor; stroke-width: 2; }
+  .fit-inner { padding: 20px 20px 22px; }
+  .fit-progress { margin: 16px 0 22px; }
+  .fit-options { margin-top: 20px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -355,4 +423,532 @@ footer { background: var(--night); color: rgba(255,253,249,.45); border-top: 1px
   *, *::before, *::after { transition-duration: .01ms !important; }
 }
 
-</style></head><body class="__variable_geist_0tvmz3h __variable_geist_mono_1diim1n antialiased"><main id="top"><header class="site-header"><a class="brand" href="#top" aria-label="Project Carve home"><span class="brand-mark">C</span><span>PROJECT CARVE</span></a><nav aria-label="Main navigation"><a href="#system">The system</a><a href="#process">How it works</a><a href="#investment">Investment</a><a href="#faq">FAQ</a></nav><a class="header-cta" href="https://wa.me/94706866700?text=Hi%20Haritha%2C%20I%27d%20like%20to%20see%20if%20Project%20Carve%20is%20right%20for%20me." target="_blank" rel="noreferrer">Check your fit <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M14 7l5 5-5 5"></path></svg></a></header><section class="hero dark-section"><div class="hero-orbit" aria-hidden="true"></div><div class="shell hero-grid"><div class="hero-copy"><p class="eyebrow light">1:1 WEIGHT-LOSS COACHING · COLOMBO</p><h1>Lose the weight.<span>Learn how to keep it off.</span></h1><p class="hero-lead">Project Carve is a 3-month coaching system built around your real life — training, nutrition, sleep, stress and habits — so you get a result and understand how to maintain it.</p><div class="hero-actions"><a class="button button-primary" href="https://wa.me/94706866700?text=Hi%20Haritha%2C%20I%27d%20like%20to%20see%20if%20Project%20Carve%20is%20right%20for%20me." target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 11.7a8.5 8.5 0 0 1-12.6 7.4L3.5 20l1.1-4.2A8.5 8.5 0 1 1 20.5 11.7Z"></path><path d="M8.2 7.8c.3-.6.6-.6.9-.6h.4c.2 0 .4.1.5.5l.7 1.7c.1.3 0 .5-.2.7l-.5.6c-.2.2-.2.4-.1.6.5 1.1 1.4 2 2.5 2.5.2.1.4.1.6-.1l.7-.8c.2-.2.4-.3.7-.2l1.8.8c.3.1.5.3.5.5 0 .3-.1 1.2-.6 1.7-.5.5-1.2.8-2 .8-.6 0-1.3-.2-2.2-.6a10.5 10.5 0 0 1-4.6-4.1c-.6-1-.9-1.9-.9-2.6 0-.6.2-1.1.5-1.4Z"></path></svg> Start the 2-minute fit check</a><a class="button button-quiet" href="#system">See the full system</a></div><p class="microcopy">A few direct questions over WhatsApp. No call, no sales team, no pressure.</p><div class="trust-row" aria-label="Program assurances"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4.2 4.2L19 6.8"></path></svg> Certified Life Coach · ACCPH, UK</span><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4.2 4.2L19 6.8"></path></svg> Direct 1:1 coaching</span><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4.2 4.2L19 6.8"></path></svg> No lock-in contract</span></div></div><div class="proof-block"><div class="proof-kicker">THE COACH&#x27;S OWN TRANSFORMATION</div><div class="video-shell"><video controls="" muted="" playsInline="" preload="metadata" poster="transformation-poster.jpg" aria-label="Haritha&#x27;s body transformation from 95 kilograms to 65 kilograms"><source src="transformation.mp4" type="video/mp4"/></video></div><div class="proof-caption"><strong>95kg → 65kg</strong><span>Real food · No supplements · No fat burners</span></div></div></div></section><section class="proof-strip" aria-label="Project Carve facts"><div class="shell proof-stats"><div><strong>−30kg</strong><span>Haritha&#x27;s own result</span></div><div><strong>Up to 24</strong><span>Supervised sessions</span></div><div><strong>5 systems</strong><span>Coached together</span></div><div><strong>0</strong><span>Required supplements</span></div></div></section><section class="section intro-section" id="system"><div class="shell"><div class="section-heading narrow"><p class="eyebrow">WHY OTHER PLANS BREAK</p><h2>Your plan should survive your life.</h2><p>Knowing what to eat is rarely the whole problem. Progress usually breaks where stress, sleep, cravings, work and routine collide. Project Carve coaches the whole system instead of blaming your willpower.</p></div><div class="problem-grid"><article class="problem-card"><span>01</span><h3>Stress changes the plan</h3><p>A hard day turns food into relief. We work on the trigger, not just the calories.</p></article><article class="problem-card"><span>02</span><h3>Poor sleep changes hunger</h3><p>Recovery, appetite and energy all suffer. Sleep is coached as part of the system.</p></article><article class="problem-card"><span>03</span><h3>Real life interrupts routines</h3><p>Busy weeks and travel are expected. Your plan adapts before one bad week becomes quitting.</p></article><article class="problem-card"><span>04</span><h3>Generic rules create dependence</h3><p>You learn why the plan works, so you can make intelligent adjustments yourself.</p></article></div></div></section><section class="section system-section"><div class="shell"><div class="section-heading split-heading"><div><p class="eyebrow">THE COMPLETE SYSTEM</p><h2>Five moving parts. One clear plan.</h2></div><p>No separate add-ons and no pretending food alone fixes everything. Each part supports the others, and each is adjusted to you.</p></div><div class="pillar-list"><article class="pillar"><span class="pillar-number">01</span><h3>Training</h3><p>Supervised strength training, technique, posture and a plan built for your level.</p></article><article class="pillar"><span class="pillar-number">02</span><h3>Nutrition</h3><p>A real-food structure you understand and can adjust without extreme dieting.</p></article><article class="pillar"><span class="pillar-number">03</span><h3>Sleep</h3><p>Practical changes that support recovery, energy and appetite control.</p></article><article class="pillar"><span class="pillar-number">04</span><h3>Stress</h3><p>Breathing, meditation and tools for stress eating when they are needed.</p></article><article class="pillar"><span class="pillar-number">05</span><h3>Habits</h3><p>Weekly review, cravings support and routines designed around your actual life.</p></article></div><div class="ownership-callout"><div class="callout-mark" aria-hidden="true">→</div><div><p class="eyebrow">THE PART MOST PROGRAMS LEAVE OUT</p><h3>You won&#x27;t just follow a plan. You&#x27;ll learn how to build one.</h3><p>Understand your calories, nutrition, workout structure and weekly adjustments — so when life changes, you know what to change with it.</p></div></div></div></section><section class="section philosophy-section" id="philosophy"><div class="shell philosophy-grid"><div class="philosophy-image"><img src="active-carving-transformation-v2.webp" alt="A man actively carving away his overweight outer stone form to reveal a lean, healthy body" loading="lazy"/></div><div class="philosophy-copy"><p class="eyebrow">WHY IT IS CALLED PROJECT CARVE</p><h2>You are both the sculptor and the stone.</h2><p>Most programs treat you like something to be shaped by someone else&#x27;s rules. Project Carve puts the tools in your hands. For 90 days, Haritha works beside you — while the knowledge transfers to you, week by week.</p><p class="philosophy-line">You do not just change the body. You learn the craft.</p></div></div></section><section class="section process-section" id="process"><div class="shell process-grid"><div class="process-intro"><p class="eyebrow">HOW IT WORKS</p><h2>Structured enough to work. Flexible enough to last.</h2><p>You work directly with Haritha from the first message to your final progress review.</p><a class="text-link" href="https://wa.me/94706866700?text=Hi%20Haritha%2C%20I%27d%20like%20to%20see%20if%20Project%20Carve%20is%20right%20for%20me." target="_blank" rel="noreferrer">Check whether it fits you <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M14 7l5 5-5 5"></path></svg></a></div><ol class="steps-list"><li><span>01</span><div><h3>Quick WhatsApp fit check</h3><p>A short, honest exchange about your goal, schedule and starting point.</p></div></li><li><span>02</span><div><h3>Build your personal system</h3><p>Your nutrition and training structure are built around your body and real week.</p></div></li><li><span>03</span><div><h3>Train with supervision</h3><p>Two 1:1 sessions a week focused on safe technique, posture and strength.</p></div></li><li><span>04</span><div><h3>Review and adjust weekly</h3><p>Food, weight, training, sleep, cravings and energy are reviewed as one picture.</p></div></li></ol></div></section><section class="section coach-section" id="coach"><div class="shell coach-grid"><figure class="coach-photo"><img src="coach-haritha.webp" alt="Haritha Jayathunga, founder and coach of Project Carve" loading="lazy"/><figcaption><strong>95 → 65kg</strong><span>My own transformation</span></figcaption></figure><div class="coach-copy"><p class="eyebrow">YOUR COACH · HARITHA JAYATHUNGA</p><h2>I lost 30kg. Then I figured out why it finally worked.</h2><p>I tried the usual cycle — more gym, another plan, another coach. Some approaches worked briefly. None taught me how to make the result survive real life.</p><p>What changed everything was treating weight loss as a system: find what is failing, fix the structure, test it in reality and remove what does not work. That is the logic behind Project Carve.</p><blockquote>“The goal is not to make you good at following my rules. It is to make you capable of managing your own body.”</blockquote><div class="coach-credentials"><span>Certified Life Coach · ACCPH, UK</span><span>Senior Software Engineer</span><span>Science-based systems approach</span></div></div></div></section><section class="section tracks-section"><div class="shell"><div class="section-heading narrow"><p class="eyebrow">TWO WAYS TO START</p><h2>Choose the pace that fits your life.</h2><p>The same coaching system and education, adapted to your starting point and capacity.</p></div><div class="tracks-grid"><article class="track-card featured"><div class="track-top"><span>WARRIOR TRACK</span><em>Fast &amp; focused</em></div><h3>More structure. More measurement.</h3><p>For people ready to establish a clear, consistent routine from week one.</p><ul><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4.2 4.2L19 6.8"></path></svg> Tailored calorie and macro targets</li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4.2 4.2L19 6.8"></path></svg> Progressive workout structure</li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4.2 4.2L19 6.8"></path></svg> 3–5 efficient workouts per week</li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4.2 4.2L19 6.8"></path></svg> Faster, closely measured progress</li></ul></article><article class="track-card"><div class="track-top"><span>ADAPTIVE TRACK</span><em>Flexible &amp; steady</em></div><h3>Lower friction. Stronger foundations.</h3><p>For busy schedules, lower starting fitness, or people who need consistency first.</p><ul><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4.2 4.2L19 6.8"></path></svg> Habit-based nutrition, no strict tracking required</li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4.2 4.2L19 6.8"></path></svg> Training tailored to current ability</li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4.2 4.2L19 6.8"></path></svg> At least 2 workouts per week</li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4.2 4.2L19 6.8"></path></svg> Stress, sleep and cravings prioritised early</li></ul></article></div><p class="tracks-note">The method changes based on the person. <strong>The standard does not.</strong></p></div></section><section class="mindbody-section" id="mindbody"><div class="shell mindbody-frame"><img src="bodymind-wide.webp" alt="A calm stone figure meditating beside balanced stones and a growing plant" loading="lazy"/><div class="mindbody-copy"><p class="eyebrow">THE STATE YOU ARE BUILDING</p><h2>The weight comes off. The calm stays.</h2><p>Food without guilt. Training without dread. A stronger body and a mind that is no longer fighting it. Stress, sleep and emotional eating are part of the coaching — not side notes.</p></div></div></section><section class="section investment-section dark-section" id="investment"><div class="shell"><div class="section-heading centered light-heading"><p class="eyebrow light">THE INVESTMENT</p><h2>One program. Everything included.</h2><p>No tiers, hidden coaching add-ons or supplement list waiting after you join.</p></div><div class="price-card"><div class="price-summary"><span class="price-label">COMPLETE 3-MONTH SYSTEM</span><div class="price">Rs. 210,000</div><p>Payment plan available</p><div class="payment-plan"><span><small>MONTH 1</small>Rs. 90,000</span><span><small>MONTH 2</small>Rs. 60,000</span><span><small>MONTH 3</small>Rs. 60,000</span></div><p class="price-anchor">About <strong>Rs. 2,300 a day</strong> across 90 days.</p></div><div class="price-includes"><h3>What is included</h3><ul><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4.2 4.2L19 6.8"></path></svg><span><strong>Up to 24 supervised sessions</strong> for technique, posture, strength and safety</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4.2 4.2L19 6.8"></path></svg><span><strong>Your nutrition plan</strong> and the education to adjust it yourself</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4.2 4.2L19 6.8"></path></svg><span><strong>Your workout plan</strong> and the logic to build your own later</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4.2 4.2L19 6.8"></path></svg><span><strong>Weekly progress reviews</strong> covering the whole system</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4.2 4.2L19 6.8"></path></svg><span><strong>Stress, sleep, cravings and habit coaching</strong> when needed</span></li></ul><a class="button button-primary button-wide" href="https://wa.me/94706866700?text=Hi%20Haritha%2C%20I%27d%20like%20to%20see%20if%20Project%20Carve%20is%20right%20for%20me." target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 11.7a8.5 8.5 0 0 1-12.6 7.4L3.5 20l1.1-4.2A8.5 8.5 0 1 1 20.5 11.7Z"></path><path d="M8.2 7.8c.3-.6.6-.6.9-.6h.4c.2 0 .4.1.5.5l.7 1.7c.1.3 0 .5-.2.7l-.5.6c-.2.2-.2.4-.1.6.5 1.1 1.4 2 2.5 2.5.2.1.4.1.6-.1l.7-.8c.2-.2.4-.3.7-.2l1.8.8c.3.1.5.3.5.5 0 .3-.1 1.2-.6 1.7-.5.5-1.2.8-2 .8-.6 0-1.3-.2-2.2-.6a10.5 10.5 0 0 1-4.6-4.1c-.6-1-.9-1.9-.9-2.6 0-.6.2-1.1.5-1.4Z"></path></svg> Start your fit check</a><div class="assurances"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4.2 4.2L19 6.8"></path></svg> Direct with Haritha</span><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4.2 4.2L19 6.8"></path></svg> No lock-in contract</span><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4.2 4.2L19 6.8"></path></svg> Honest fit check first</span></div></div></div><p class="venue-note">Gym membership, day-pass fees and venue charges are not included.</p></div></section><section class="section faq-section" id="faq"><div class="shell faq-grid"><div class="faq-intro"><p class="eyebrow">STRAIGHT ANSWERS</p><h2>Questions you should ask before joining.</h2><p>Still unsure about something?</p><a class="text-link" href="https://wa.me/94706866700?text=Hi%20Haritha%2C%20I%20have%20a%20question%20about%20Project%20Carve." target="_blank" rel="noreferrer">Ask Haritha directly <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M14 7l5 5-5 5"></path></svg></a></div><div class="faq-list"><details open=""><summary>Where do the training sessions happen?<span aria-hidden="true">+</span></summary><p>At your gym, at home, or at a selected partner gym in Colombo. We agree on the most practical option during the fit check. Gym membership and venue fees are not included.</p></details><details><summary>How much time does this take each week?<span aria-hidden="true">+</span></summary><p>Usually two supervised training sessions of about an hour each, any additional solo training your track calls for, and a short weekly progress review. The plan is designed around your schedule.</p></details><details><summary>Do I need supplements or fat burners?<span aria-hidden="true">+</span></summary><p>No. Project Carve is built around real food and structured training. Haritha&#x27;s own 30kg transformation used no supplements or fat burners.</p></details><details><summary>Will I lose 30kg in three months too?<span aria-hidden="true">+</span></summary><p>That was Haritha&#x27;s personal result over a longer period, not a three-month promise. Your pace depends on your starting point, health, consistency and circumstances. The promise is an honest, structured process — not a made-up number by day 90.</p></details><details><summary>What happens after the three months?<span aria-hidden="true">+</span></summary><p>You leave knowing how to manage your nutrition, training and progress reviews yourself. Maintenance coaching is available, but the program is built from day one to reduce dependence on a coach.</p></details><details><summary>What if Project Carve is not right for me?<span aria-hidden="true">+</span></summary><p>The WhatsApp fit check is designed to find that out before you commit. If Haritha does not believe the program fits your needs, he will tell you directly. There is no lock-in contract.</p></details></div></div></section><section class="final-cta dark-section"><div class="shell final-cta-inner"><p class="eyebrow light">YOUR NEXT STEP IS SMALL</p><h2>Stop restarting.<br/>Build something you can keep.</h2><p>Send one message. Answer a few direct questions. Find out whether Project Carve is the right next move for you.</p><a class="button button-primary" href="https://wa.me/94706866700?text=Hi%20Haritha%2C%20I%27d%20like%20to%20see%20if%20Project%20Carve%20is%20right%20for%20me." target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 11.7a8.5 8.5 0 0 1-12.6 7.4L3.5 20l1.1-4.2A8.5 8.5 0 1 1 20.5 11.7Z"></path><path d="M8.2 7.8c.3-.6.6-.6.9-.6h.4c.2 0 .4.1.5.5l.7 1.7c.1.3 0 .5-.2.7l-.5.6c-.2.2-.2.4-.1.6.5 1.1 1.4 2 2.5 2.5.2.1.4.1.6-.1l.7-.8c.2-.2.4-.3.7-.2l1.8.8c.3.1.5.3.5.5 0 .3-.1 1.2-.6 1.7-.5.5-1.2.8-2 .8-.6 0-1.3-.2-2.2-.6a10.5 10.5 0 0 1-4.6-4.1c-.6-1-.9-1.9-.9-2.6 0-.6.2-1.1.5-1.4Z"></path></svg> Start the 2-minute fit check</a><span class="final-note">WhatsApp · 070 686 6700 · Colombo</span></div></section><footer><div class="shell footer-inner"><a class="brand footer-brand" href="#top"><span class="brand-mark">C</span><span>PROJECT CARVE</span></a><p>Weight-loss coaching built around real life.</p><span>© 2026 Project Carve</span></div></footer><div class="mobile-bar"><div><small>QUICK WHATSAPP FIT CHECK</small><strong>See if Project Carve fits you</strong></div><a href="https://wa.me/94706866700?text=Hi%20Haritha%2C%20I%27d%20like%20to%20see%20if%20Project%20Carve%20is%20right%20for%20me." target="_blank" rel="noreferrer" aria-label="Start your Project Carve fit check on WhatsApp">Start <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M14 7l5 5-5 5"></path></svg></a></div></main></body></html>
+</style>
+</head>
+<body>
+<main id="top">
+
+<header class="site-header">
+  <a class="brand" href="#top" aria-label="Project Carve home"><span class="brand-mark">C</span><span>PROJECT CARVE</span></a>
+  <nav aria-label="Main navigation">
+    <a href="#system">The system</a>
+    <a href="#process">How it works</a>
+    <a href="#investment">Investment</a>
+    <a href="#faq">FAQ</a>
+  </nav>
+  <a class="header-cta" href="https://wa.me/94706866700?text=Hi%20Haritha%2C%20I%27d%20like%20to%20see%20if%20Project%20Carve%20is%20right%20for%20me.%20(ref%3A%20header)" data-wa data-fit data-ref="header" target="_blank" rel="noreferrer">Check your fit <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M14 7l5 5-5 5"></path></svg></a>
+</header>
+
+<section class="hero dark-section">
+  <div class="hero-orbit" aria-hidden="true"></div>
+  <div class="shell hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow light">1:1 WEIGHT-LOSS COACHING · COLOMBO</p>
+      <h1>Lose the weight.<span>Learn how to keep it off.</span></h1>
+      <p class="hero-lead">3 months of 1:1 coaching in Colombo, built around your real week<span class="lead-extra">: training, food, sleep and stress</span>. No crash diets. No supplements needed. No giving up rice and curry.</p>
+      <figure class="hero-proof">
+        <img src="before-after.jpg" width="720" height="439" decoding="async" alt="Haritha before and after: 95kg on the left, 65kg on the right">
+        <figcaption><strong>95kg → 65kg</strong><span>Haritha's own result · real food, no supplements</span></figcaption>
+      </figure>
+      <div class="hero-actions">
+        <a class="button button-primary" href="https://wa.me/94706866700?text=Hi%20Haritha%2C%20I%27d%20like%20to%20see%20if%20Project%20Carve%20is%20right%20for%20me.%20(ref%3A%20hero)" data-wa data-fit data-ref="hero" target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 11.7a8.5 8.5 0 0 1-12.6 7.4L3.5 20l1.1-4.2A8.5 8.5 0 1 1 20.5 11.7Z"></path><path d="M8.2 7.8c.3-.6.6-.6.9-.6h.4c.2 0 .4.1.5.5l.7 1.7c.1.3 0 .5-.2.7l-.5.6c-.2.2-.2.4-.1.6.5 1.1 1.4 2 2.5 2.5.2.1.4.1.6-.1l.7-.8c.2-.2.4-.3.7-.2l1.8.8c.3.1.5.3.5.5 0 .3-.1 1.2-.6 1.7-.5.5-1.2.8-2 .8-.6 0-1.3-.2-2.2-.6a10.5 10.5 0 0 1-4.6-4.1c-.6-1-.9-1.9-.9-2.6 0-.6.2-1.1.5-1.4Z"></path></svg> Start the 2-minute fit check</a>
+        <a class="button button-quiet" href="#system">See the full system</a>
+      </div>
+      <p class="microcopy">5 quick questions, then chat with Haritha on WhatsApp. No sales team, no pressure.</p>
+      <div class="trust-row" aria-label="Program assurances">
+        <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4.2 4.2L19 6.8"></path></svg> Certified Life Coach · ACCPH, UK</span>
+        <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4.2 4.2L19 6.8"></path></svg> Direct 1:1 coaching</span>
+        <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4.2 4.2L19 6.8"></path></svg> WhatsApp support between sessions</span>
+      </div>
+    </div>
+    <div class="proof-block">
+      <div class="proof-kicker">THE COACH'S OWN TRANSFORMATION</div>
+      <div class="video-shell">
+        <video controls muted playsinline preload="metadata" poster="transformation-poster.jpg" aria-label="Haritha's body transformation from 95 kilograms to 65 kilograms"><source src="transformation.mp4" type="video/mp4"></video>
+      </div>
+      <div class="proof-caption"><strong>95kg → 65kg</strong><span>Real food · No supplements · No fat burners</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="proof-strip" aria-label="Project Carve facts">
+  <div class="shell proof-stats">
+    <div><strong>−30kg</strong><span>Haritha's own result</span></div>
+    <div><strong>Up to 24</strong><span>Supervised sessions</span></div>
+    <div><strong>5 systems</strong><span>Coached together</span></div>
+    <div><strong>0</strong><span>Required supplements</span></div>
+  </div>
+</section>
+
+<section class="section fit-section" id="fit">
+  <div class="shell">
+    <div class="section-heading narrow">
+      <p class="eyebrow">IS THIS FOR YOU?</p>
+      <h2>Built for busy people who are done restarting.</h2>
+      <p>Project Carve works best when you're ready to commit to 3 months. Be honest with yourself before you message.</p>
+    </div>
+    <div class="fit-grid">
+      <article class="fit-card">
+        <h3>It's for you if</h3>
+        <ul>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4.2 4.2L19 6.8"></path></svg> You've lost weight before and it came back</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4.2 4.2L19 6.8"></path></svg> You're busy with work or family and need a plan that fits</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4.2 4.2L19 6.8"></path></svg> You can train with Haritha twice a week for 3 months</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4.2 4.2L19 6.8"></path></svg> You want to understand how to manage your weight yourself</li>
+        </ul>
+      </article>
+      <article class="fit-card not-for">
+        <h3>It's not for you if</h3>
+        <ul>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7l10 10M17 7 7 17"></path></svg> You want a crash diet, pills or fat burners</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7l10 10M17 7 7 17"></path></svg> You need a result for an event in 2 weeks</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7l10 10M17 7 7 17"></path></svg> You can't commit to two sessions a week</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section intro-section" id="why">
+  <div class="shell">
+    <div class="section-heading narrow">
+      <p class="eyebrow">WHY OTHER PLANS BREAK</p>
+      <h2>Your plan should survive your life.</h2>
+      <p>Knowing what to eat is rarely the whole problem. Progress usually breaks where stress, sleep, cravings, work and routine collide. Project Carve coaches the whole system instead of blaming your willpower.</p>
+    </div>
+    <div class="problem-grid">
+      <article class="problem-card"><span>01</span><h3>Stress changes the plan</h3><p>A hard day turns food into relief. We work on the trigger, not just the calories.</p></article>
+      <article class="problem-card"><span>02</span><h3>Poor sleep changes hunger</h3><p>Recovery, appetite and energy all suffer. Sleep is coached as part of the system.</p></article>
+      <article class="problem-card"><span>03</span><h3>Real life interrupts routines</h3><p>Busy weeks and travel are expected. Your plan adapts before one bad week becomes quitting.</p></article>
+      <article class="problem-card"><span>04</span><h3>Generic rules create dependence</h3><p>You learn why the plan works, so you can make intelligent adjustments yourself.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section process-section" id="process">
+  <div class="shell process-grid">
+    <div class="process-intro">
+      <p class="eyebrow">HOW IT WORKS</p>
+      <h2>Structured enough to work. Flexible enough to last.</h2>
+      <p>You work directly with Haritha from the first message to your final progress review.</p>
+      <a class="text-link" href="https://wa.me/94706866700?text=Hi%20Haritha%2C%20I%27d%20like%20to%20see%20if%20Project%20Carve%20is%20right%20for%20me.%20(ref%3A%20process)" data-wa data-fit data-ref="process" target="_blank" rel="noreferrer">Check whether it fits you <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M14 7l5 5-5 5"></path></svg></a>
+    </div>
+    <ol class="steps-list">
+      <li><span>01</span><div><h3>Quick fit check</h3><p>Five quick questions on this page, then a short, honest WhatsApp chat about your goal, schedule and starting point.</p></div></li>
+      <li><span>02</span><div><h3>1:1 assessment</h3><p>Your starting point, routine and training ability are assessed before you join. Rs. 5,000, credited to your program fee if you join.</p></div></li>
+      <li><span>03</span><div><h3>Build your personal system</h3><p>Your nutrition and training structure are built around your body and real week.</p></div></li>
+      <li><span>04</span><div><h3>Train with supervision</h3><p>Two 1:1 sessions a week focused on safe technique, posture and strength.</p></div></li>
+      <li><span>05</span><div><h3>Review and adjust weekly</h3><p>Food, weight, training, sleep, cravings and energy are reviewed as one picture, with WhatsApp support between sessions.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<section class="section coach-section" id="coach">
+  <div class="shell coach-grid">
+    <figure class="coach-photo">
+      <img src="coach-haritha.webp" alt="Haritha Jayathunga, founder and coach of Project Carve" loading="lazy">
+      <figcaption><strong>95 → 65kg</strong><span>My own transformation</span></figcaption>
+    </figure>
+    <div class="coach-copy">
+      <p class="eyebrow">YOUR COACH · HARITHA JAYATHUNGA</p>
+      <h2>I lost 30kg. Then I figured out why it finally worked.</h2>
+      <p>I tried the usual cycle — more gym, another plan, another coach. Some approaches worked briefly. None taught me how to make the result survive real life.</p>
+      <p>What changed everything was treating weight loss as a system: find what is failing, fix the structure, test it in reality and remove what does not work. That is the logic behind Project Carve.</p>
+      <blockquote>“The goal is not to make you good at following my rules. It is to make you capable of managing your own body.”</blockquote>
+      <div class="coach-credentials">
+        <span>Certified Life Coach · ACCPH, UK</span>
+        <span>Lost 30kg with real food</span>
+        <span>Engineer's approach: measure, test, adjust</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section philosophy-section" id="philosophy">
+  <div class="shell philosophy-grid">
+    <div class="philosophy-image">
+      <img src="active-carving-transformation-v2.webp" alt="A man actively carving away his overweight outer stone form to reveal a lean, healthy body" loading="lazy">
+    </div>
+    <div class="philosophy-copy">
+      <p class="eyebrow light">WHY IT IS CALLED PROJECT CARVE</p>
+      <h2>You are both the sculptor and the stone.</h2>
+      <p>Project Carve puts the tools in your hands. For 90 days, Haritha works beside you while the knowledge transfers to you, week by week.</p>
+      <p class="philosophy-line">You do not just change the body. You learn the craft.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section system-section" id="system">
+  <div class="shell">
+    <div class="section-heading split-heading">
+      <div>
+        <p class="eyebrow">THE COMPLETE SYSTEM</p>
+        <h2>Five moving parts. One clear plan.</h2>
+      </div>
+      <p>No separate add-ons and no pretending food alone fixes everything. Each part supports the others, and each is adjusted to you. The result: food without guilt, and training without dread.</p>
+    </div>
+    <div class="pillar-list">
+      <article class="pillar"><span class="pillar-number">01</span><h3>Training</h3><p>Supervised strength training, technique, posture and a plan built for your level.</p></article>
+      <article class="pillar"><span class="pillar-number">02</span><h3>Nutrition</h3><p>A real-food structure you understand and can adjust without extreme dieting. Rice and curry included.</p></article>
+      <article class="pillar"><span class="pillar-number">03</span><h3>Sleep</h3><p>Practical changes that support recovery, energy and appetite control.</p></article>
+      <article class="pillar"><span class="pillar-number">04</span><h3>Stress</h3><p>Breathing, meditation and tools for stress eating when they are needed.</p></article>
+      <article class="pillar"><span class="pillar-number">05</span><h3>Habits</h3><p>Weekly review, cravings support and routines designed around your actual life.</p></article>
+    </div>
+    <div class="ownership-callout">
+      <div class="callout-mark" aria-hidden="true">→</div>
+      <div>
+        <p class="eyebrow">THE PART MOST PROGRAMS LEAVE OUT</p>
+        <h3>You won't just follow a plan. You'll learn how to build one.</h3>
+        <p>Understand your calories, nutrition, workout structure and weekly adjustments — so when life changes, you know what to change with it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section tracks-section" id="tracks">
+  <div class="shell">
+    <div class="section-heading narrow">
+      <p class="eyebrow">TWO WAYS TO START</p>
+      <h2>Choose the pace that fits your life.</h2>
+      <p>The same coaching system and education, adapted to your starting point and capacity.</p>
+    </div>
+    <div class="tracks-grid">
+      <article class="track-card featured">
+        <div class="track-top"><span>WARRIOR TRACK</span><em>Fast &amp; focused</em></div>
+        <h3>More structure. More measurement.</h3>
+        <p>For people ready to establish a clear, consistent routine from week one.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4.2 4.2L19 6.8"></path></svg> Tailored calorie and macro targets</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4.2 4.2L19 6.8"></path></svg> Progressive workout structure</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4.2 4.2L19 6.8"></path></svg> 3–5 efficient workouts per week</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4.2 4.2L19 6.8"></path></svg> Faster, closely measured progress</li>
+        </ul>
+      </article>
+      <article class="track-card">
+        <div class="track-top"><span>ADAPTIVE TRACK</span><em>Flexible &amp; steady</em></div>
+        <h3>Lower friction. Stronger foundations.</h3>
+        <p>For busy schedules, lower starting fitness, or people who need consistency first.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4.2 4.2L19 6.8"></path></svg> Habit-based nutrition, no strict tracking required</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4.2 4.2L19 6.8"></path></svg> Training tailored to current ability</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4.2 4.2L19 6.8"></path></svg> At least 2 workouts per week</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4.2 4.2L19 6.8"></path></svg> Stress, sleep and cravings prioritised early</li>
+        </ul>
+      </article>
+    </div>
+    <p class="tracks-note">The method changes based on the person. <strong>The standard does not.</strong></p>
+  </div>
+</section>
+
+<section class="section investment-section dark-section" id="investment">
+  <div class="shell">
+    <div class="section-heading centered light-heading">
+      <p class="eyebrow light">THE INVESTMENT</p>
+      <h2>One program. Everything included.</h2>
+      <p>No tiers, hidden coaching add-ons or supplement list waiting after you join.</p>
+    </div>
+    <div class="price-card">
+      <div class="price-summary">
+        <span class="price-label">COMPLETE 3-MONTH SYSTEM</span>
+        <div class="price">Rs. 210,000</div>
+        <p>Paid in full before you start. Non-refundable.</p>
+        <div class="payment-plan">
+          <span><small>1 · FIT CHECK ON WHATSAPP</small><strong>Free</strong></span>
+          <span><small>2 · 1:1 ASSESSMENT</small><strong>Rs. 5,000</strong></span>
+          <span><small>3 · JOIN: BALANCE</small><strong>Rs. 205,000</strong></span>
+        </div>
+        <p class="price-anchor">The assessment fee is credited if you join, so the total stays Rs. 210,000. About <strong>Rs. 2,300 a day</strong> across 90 days.</p>
+      </div>
+      <div class="price-includes">
+        <h3>What is included</h3>
+        <ul>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4.2 4.2L19 6.8"></path></svg><span><strong>Up to 24 supervised 1:1 sessions</strong>, two a week, for technique, posture, strength and safety</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4.2 4.2L19 6.8"></path></svg><span><strong>Your nutrition plan</strong> built on real food, rice and curry included, and the education to adjust it yourself</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4.2 4.2L19 6.8"></path></svg><span><strong>Your workout plan</strong> and the logic to build your own later</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4.2 4.2L19 6.8"></path></svg><span><strong>Weekly progress reviews</strong> covering the whole system</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4.2 4.2L19 6.8"></path></svg><span><strong>WhatsApp support between sessions</strong>, directly with Haritha</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4.2 4.2L19 6.8"></path></svg><span><strong>Stress, sleep, cravings and habit coaching</strong> when needed</span></li>
+        </ul>
+        <a class="button button-primary button-wide" href="https://wa.me/94706866700?text=Hi%20Haritha%2C%20I%27d%20like%20to%20see%20if%20Project%20Carve%20is%20right%20for%20me.%20(ref%3A%20price)" data-wa data-fit data-ref="price" target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 11.7a8.5 8.5 0 0 1-12.6 7.4L3.5 20l1.1-4.2A8.5 8.5 0 1 1 20.5 11.7Z"></path><path d="M8.2 7.8c.3-.6.6-.6.9-.6h.4c.2 0 .4.1.5.5l.7 1.7c.1.3 0 .5-.2.7l-.5.6c-.2.2-.2.4-.1.6.5 1.1 1.4 2 2.5 2.5.2.1.4.1.6-.1l.7-.8c.2-.2.4-.3.7-.2l1.8.8c.3.1.5.3.5.5 0 .3-.1 1.2-.6 1.7-.5.5-1.2.8-2 .8-.6 0-1.3-.2-2.2-.6a10.5 10.5 0 0 1-4.6-4.1c-.6-1-.9-1.9-.9-2.6 0-.6.2-1.1.5-1.4Z"></path></svg> Start your fit check</a>
+        <div class="assurances">
+          <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4.2 4.2L19 6.8"></path></svg> Direct with Haritha</span>
+          <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4.2 4.2L19 6.8"></path></svg> Honest fit check first</span>
+          <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4.2 4.2L19 6.8"></path></svg> Assessment fee credited if you join</span>
+        </div>
+      </div>
+    </div>
+    <p class="venue-note">Gym membership, day-pass fees and venue charges are not included.</p>
+  </div>
+</section>
+
+<section class="section faq-section" id="faq">
+  <div class="shell faq-grid">
+    <div class="faq-intro">
+      <p class="eyebrow">STRAIGHT ANSWERS</p>
+      <h2>Questions you should ask before joining.</h2>
+      <p>Still unsure about something?</p>
+      <a class="text-link" href="https://wa.me/94706866700?text=Hi%20Haritha%2C%20I%20have%20a%20question%20about%20Project%20Carve.%20(ref%3A%20faq)" data-wa="Hi Haritha, I have a question about Project Carve." data-ref="faq" target="_blank" rel="noreferrer">Ask Haritha directly <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M14 7l5 5-5 5"></path></svg></a>
+    </div>
+    <div class="faq-list">
+      <details open>
+        <summary>Where do the training sessions happen?<span aria-hidden="true">+</span></summary>
+        <p>At your gym, at home, or at a selected partner gym in Colombo. If you'd rather train somewhere private, home sessions are an option. We agree on the most practical place during the fit check and assessment. Gym membership and venue fees are not included.</p>
+      </details>
+      <details>
+        <summary>How much time does this take each week?<span aria-hidden="true">+</span></summary>
+        <p>Usually two supervised training sessions of about an hour each, any additional solo training your track calls for, and a short weekly progress review. The plan is designed around your schedule.</p>
+      </details>
+      <details>
+        <summary>Do I have to give up rice and curry?<span aria-hidden="true">+</span></summary>
+        <p>No. Project Carve is built on real food, including rice and curry. You learn portions and meal structure that fit the way you already eat, instead of cutting out the foods you live with.</p>
+      </details>
+      <details>
+        <summary>Do I need supplements or fat burners?<span aria-hidden="true">+</span></summary>
+        <p>No. Project Carve is built around real food and structured training. Haritha's own 30kg transformation used no supplements or fat burners.</p>
+      </details>
+      <details>
+        <summary>Will I lose 30kg in three months too?<span aria-hidden="true">+</span></summary>
+        <p>That was Haritha's personal result over a longer period, not a three-month promise. Your pace depends on your starting point, health, consistency and circumstances. The promise is an honest, structured process — not a made-up number by day 90.</p>
+      </details>
+      <details>
+        <summary>I have a medical condition or an injury. Can I join?<span aria-hidden="true">+</span></summary>
+        <p>Tell Haritha about it in the fit check, so the plan can be built around it. Project Carve is coaching, not medical treatment: if you have a medical condition or an injury, get your doctor's go-ahead before you start.</p>
+      </details>
+      <details>
+        <summary>What if I travel or have a busy week?<span aria-hidden="true">+</span></summary>
+        <p>Busy weeks and travel are expected. Tell Haritha early and your plan for that week is adjusted, so one disrupted week doesn't undo your progress.</p>
+      </details>
+      <details>
+        <summary>How does payment work? Can I get a refund?<span aria-hidden="true">+</span></summary>
+        <p>The full Rs. 210,000 is paid once, before your first session, and it isn't refundable, including if you decide to stop early. That's why the fit check and the Rs. 5,000 assessment come first: you'll know exactly how the program would work for you before you pay. If you join, the assessment fee is credited, so the total stays Rs. 210,000.</p>
+      </details>
+      <details>
+        <summary>What happens after the three months?<span aria-hidden="true">+</span></summary>
+        <p>You leave knowing how to manage your nutrition, training and progress reviews yourself. Maintenance coaching is available, but the program is built from day one to reduce dependence on a coach.</p>
+      </details>
+      <details>
+        <summary>What if Project Carve is not right for me?<span aria-hidden="true">+</span></summary>
+        <p>The fit check and the assessment are designed to find that out before you pay for the program. If Haritha does not believe the program fits your needs, you'll be told directly.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta dark-section">
+  <div class="shell final-cta-inner">
+    <p class="eyebrow light">YOUR NEXT STEP IS SMALL</p>
+    <h2>Stop restarting.<br>Build something you can keep.</h2>
+    <p>Answer five quick questions. Send them to Haritha on WhatsApp. Find out whether Project Carve is the right next move for you.</p>
+    <a class="button button-primary" href="https://wa.me/94706866700?text=Hi%20Haritha%2C%20I%27d%20like%20to%20see%20if%20Project%20Carve%20is%20right%20for%20me.%20(ref%3A%20final)" data-wa data-fit data-ref="final" target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 11.7a8.5 8.5 0 0 1-12.6 7.4L3.5 20l1.1-4.2A8.5 8.5 0 1 1 20.5 11.7Z"></path><path d="M8.2 7.8c.3-.6.6-.6.9-.6h.4c.2 0 .4.1.5.5l.7 1.7c.1.3 0 .5-.2.7l-.5.6c-.2.2-.2.4-.1.6.5 1.1 1.4 2 2.5 2.5.2.1.4.1.6-.1l.7-.8c.2-.2.4-.3.7-.2l1.8.8c.3.1.5.3.5.5 0 .3-.1 1.2-.6 1.7-.5.5-1.2.8-2 .8-.6 0-1.3-.2-2.2-.6a10.5 10.5 0 0 1-4.6-4.1c-.6-1-.9-1.9-.9-2.6 0-.6.2-1.1.5-1.4Z"></path></svg> Start the 2-minute fit check</a>
+    <span class="final-note">WhatsApp · 070 686 6700 · Colombo</span>
+  </div>
+</section>
+
+<footer>
+  <div class="shell footer-inner">
+    <a class="brand footer-brand" href="#top"><span class="brand-mark">C</span><span>PROJECT CARVE</span></a>
+    <p>Weight-loss coaching built around real life.</p>
+    <span>© 2026 Project Carve</span>
+  </div>
+</footer>
+
+<div class="mobile-bar">
+  <div><small>2-MINUTE FIT CHECK</small><strong>See if Project Carve fits you</strong></div>
+  <a href="https://wa.me/94706866700?text=Hi%20Haritha%2C%20I%27d%20like%20to%20see%20if%20Project%20Carve%20is%20right%20for%20me.%20(ref%3A%20bar)" data-wa data-fit data-ref="bar" target="_blank" rel="noreferrer" aria-label="Start your Project Carve fit check">Start <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M14 7l5 5-5 5"></path></svg></a>
+</div>
+
+</main>
+
+<dialog class="fit-dialog" id="fit-check" aria-labelledby="fit-title">
+  <div class="fit-inner">
+    <div class="fit-top">
+      <p class="eyebrow light" id="fit-title">2-MINUTE FIT CHECK</p>
+      <button class="fit-close" type="button" data-fit-close aria-label="Close the fit check">×</button>
+    </div>
+    <div class="fit-progress" aria-hidden="true"><span></span></div>
+
+    <div class="fit-step" data-label="Goal">
+      <p class="fit-count">QUESTION 1 OF 5</p>
+      <h3 tabindex="-1">What's your main goal?</h3>
+      <div class="fit-options">
+        <button class="fit-option" type="button">Lose up to 10kg</button>
+        <button class="fit-option" type="button">Lose 10–20kg</button>
+        <button class="fit-option" type="button">Lose 20kg or more</button>
+        <button class="fit-option" type="button">Get fitter and stronger</button>
+      </div>
+    </div>
+    <div class="fit-step" data-label="Start" hidden>
+      <p class="fit-count">QUESTION 2 OF 5</p>
+      <h3 tabindex="-1">When do you want to start?</h3>
+      <div class="fit-options">
+        <button class="fit-option" type="button">This month</button>
+        <button class="fit-option" type="button">In 1–2 months</button>
+        <button class="fit-option" type="button">Just exploring</button>
+      </div>
+    </div>
+    <div class="fit-step" data-label="Train" hidden>
+      <p class="fit-count">QUESTION 3 OF 5</p>
+      <h3 tabindex="-1">Where would you like to train?</h3>
+      <div class="fit-options">
+        <button class="fit-option" type="button">At my gym</button>
+        <button class="fit-option" type="button">At home</button>
+        <button class="fit-option" type="button">I need a gym in Colombo</button>
+      </div>
+    </div>
+    <div class="fit-step" data-label="Sessions" hidden>
+      <p class="fit-count">QUESTION 4 OF 5</p>
+      <h3 tabindex="-1">How many sessions a week can you do?</h3>
+      <div class="fit-options">
+        <button class="fit-option" type="button">2 a week</button>
+        <button class="fit-option" type="button">3 or more a week</button>
+        <button class="fit-option" type="button">Not sure yet</button>
+      </div>
+    </div>
+    <div class="fit-step" data-label="Investment" hidden>
+      <p class="fit-count">QUESTION 5 OF 5</p>
+      <h3 tabindex="-1">The program is Rs. 210,000, paid once before you start. Does that work for you?</h3>
+      <div class="fit-options">
+        <button class="fit-option" type="button">Yes, that works</button>
+        <button class="fit-option" type="button">I'd need a few weeks to arrange it</button>
+        <button class="fit-option" type="button">Not right now</button>
+      </div>
+    </div>
+    <div class="fit-step" hidden>
+      <p class="fit-count">ALL DONE</p>
+      <h3 tabindex="-1">Send your answers to Haritha.</h3>
+      <p class="fit-note">WhatsApp opens with this message ready to send.</p>
+      <p class="fit-summary" data-fit-summary></p>
+      <a class="button button-primary button-wide" href="https://wa.me/94706866700" data-fit-send target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 11.7a8.5 8.5 0 0 1-12.6 7.4L3.5 20l1.1-4.2A8.5 8.5 0 1 1 20.5 11.7Z"></path><path d="M8.2 7.8c.3-.6.6-.6.9-.6h.4c.2 0 .4.1.5.5l.7 1.7c.1.3 0 .5-.2.7l-.5.6c-.2.2-.2.4-.1.6.5 1.1 1.4 2 2.5 2.5.2.1.4.1.6-.1l.7-.8c.2-.2.4-.3.7-.2l1.8.8c.3.1.5.3.5.5 0 .3-.1 1.2-.6 1.7-.5.5-1.2.8-2 .8-.6 0-1.3-.2-2.2-.6a10.5 10.5 0 0 1-4.6-4.1c-.6-1-.9-1.9-.9-2.6 0-.6.2-1.1.5-1.4Z"></path></svg> Send on WhatsApp</a>
+      <p class="fit-note">No WhatsApp on this device? Message <span class="nowrap">070 686 6700</span> from your phone.</p>
+    </div>
+
+    <div class="fit-foot">
+      <button class="fit-back" type="button" data-fit-back>← Back</button>
+      <a class="fit-skip" href="https://wa.me/94706866700?text=Hi%20Haritha%2C%20I%27d%20like%20to%20see%20if%20Project%20Carve%20is%20right%20for%20me." data-fit-skip target="_blank" rel="noreferrer">Skip the questions and message Haritha</a>
+    </div>
+  </div>
+</dialog>
+
+<script>
+(function () {
+  var WA_NUMBER = '94706866700';
+  var DEFAULT_TEXT = "Hi Haritha, I'd like to see if Project Carve is right for me.";
+
+  // Google Analytics 4: paste your measurement ID (G-XXXXXXXXXX) here to count visits,
+  // WhatsApp clicks and fit-check completions. While it is empty, nothing is tracked.
+  var GA_ID = '';
+
+  if (GA_ID) {
+    var tag = document.createElement('script');
+    tag.async = true;
+    tag.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+    document.head.appendChild(tag);
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { window.dataLayer.push(arguments); };
+    window.gtag('js', new Date());
+    window.gtag('config', GA_ID);
+  }
+
+  function track(name, params) {
+    if (window.gtag) window.gtag('event', name, params || {});
+  }
+
+  // A tagged link such as ?src=ig (Instagram bio) carries its source into the WhatsApp message.
+  var source = '';
+  try {
+    var query = new URLSearchParams(window.location.search);
+    source = (query.get('src') || query.get('utm_source') || '').toLowerCase().replace(/[^a-z0-9_-]/g, '').slice(0, 20);
+  } catch (e) {}
+
+  function refTag(ref) {
+    return '(ref: ' + ref + (source ? ' · ' + source : '') + ')';
+  }
+
+  function waLink(text) {
+    return 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(text);
+  }
+
+  var dialog = document.getElementById('fit-check');
+  var canFit = !!(dialog && typeof dialog.showModal === 'function');
+  var openFit = function () {};
+
+  if (canFit) {
+    var steps = Array.prototype.slice.call(dialog.querySelectorAll('.fit-step'));
+    var questions = steps.length - 1;
+    var bar = dialog.querySelector('.fit-progress span');
+    var back = dialog.querySelector('[data-fit-back]');
+    var skip = dialog.querySelector('[data-fit-skip]');
+    var send = dialog.querySelector('[data-fit-send]');
+    var summary = dialog.querySelector('[data-fit-summary]');
+    var answers = [];
+    var current = 0;
+    var from = 'hero';
+
+    var show = function (i) {
+      current = i;
+      steps.forEach(function (step, n) { step.hidden = n !== i; });
+      bar.style.width = (i / questions * 100) + '%';
+      back.style.visibility = i > 0 ? 'visible' : 'hidden';
+      steps[i].querySelector('h3').focus();
+    };
+
+    openFit = function (ref) {
+      from = ref;
+      answers = [];
+      dialog.querySelectorAll('.is-chosen').forEach(function (b) { b.classList.remove('is-chosen'); });
+      skip.href = waLink(DEFAULT_TEXT + ' ' + refTag(from + '-skip'));
+      dialog.showModal();
+      show(0);
+      track('fit_check_start', { cta: from });
+    };
+
+    dialog.addEventListener('click', function (e) {
+      var option = e.target.closest('.fit-option');
+      if (option) {
+        option.parentNode.querySelectorAll('.is-chosen').forEach(function (b) { b.classList.remove('is-chosen'); });
+        option.classList.add('is-chosen');
+        answers[current] = option.textContent.trim();
+        if (current + 1 === questions) {
+          var lines = ['Hi Haritha, I did the fit check on your website.'];
+          steps.slice(0, questions).forEach(function (step, n) {
+            lines.push(step.getAttribute('data-label') + ': ' + answers[n]);
+          });
+          lines.push(refTag(from));
+          summary.textContent = lines.join('\n');
+          send.href = waLink(lines.join('\n'));
+          track('fit_check_complete', { cta: from });
+        }
+        show(current + 1);
+      } else if (e.target === dialog || e.target.closest('[data-fit-close]')) {
+        dialog.close();
+      }
+    });
+
+    back.addEventListener('click', function () {
+      if (current > 0) show(current - 1);
+    });
+    send.addEventListener('click', function () {
+      track('whatsapp_click', { cta: from + '-fit' });
+      setTimeout(function () { dialog.close(); }, 300);
+    });
+    skip.addEventListener('click', function () {
+      track('whatsapp_click', { cta: from + '-skip' });
+    });
+  }
+
+  document.querySelectorAll('[data-wa]').forEach(function (link) {
+    var ref = link.getAttribute('data-ref');
+    link.href = waLink((link.getAttribute('data-wa') || DEFAULT_TEXT) + ' ' + refTag(ref));
+    link.addEventListener('click', function (e) {
+      if (canFit && link.hasAttribute('data-fit')) {
+        e.preventDefault();
+        openFit(ref);
+        return;
+      }
+      track('whatsapp_click', { cta: ref });
+    });
+  });
+})();
+</script>
+</body>
+</html>
